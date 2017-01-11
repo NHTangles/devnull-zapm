@@ -10,20 +10,21 @@ RayGun.o Render.o Room.o SaveLoad.o Sewer.o SewerPlant.o Shop.o		\
 Skills.o Tombstone.o Tool.o Town.o TwistyRooms.o Util.o Vat.o Vision.o	\
 Weapon.o main.o
 
-ZAPMOWNER= appowner
-GAMEDIR= "/usr/games"
-DATADIR= "/usr/games/lib/zapmdir"
+ZAPMOWNER= nethack
+GAMEDIR= "/devnull/nethackdir"
+DATADIR= "/devnull/nethackdir/zapmdir"
 
 #ARCH = -arch i386 -arch ppc
 
 LIBS= -lpanel -lcurses
 INCLUDE=
-LDFLAGS= -flat_namespace $(ARCH)
+#LDFLAGS= -flat_namespace $(ARCH)
+LDFLAGS=
 CXX = c++
 #CXX= c++-4.0
 
 
-CXXFLAGS=-Wall -Wno-char-subscripts -O -g $(INCLUDE) $(ARCH)
+CXXFLAGS=-Wall -fpermissive -Wno-char-subscripts -O -g $(INCLUDE) $(ARCH)
 
 all: zapm-oneuser
 

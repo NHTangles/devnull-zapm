@@ -5,12 +5,24 @@
 #include "Hero.h"
 #include "Game.h"
 
+#include <signal.h>
+
 int GameOver = 0;
 
 shTime Clock;
 shTime MonsterClock = 0;
 
 shVector <shMapLevel *> Maze;  /* all the levels */
+
+void hupHandler ()
+{
+    /* Attempt to save and exit on SIGHUP */
+    /* Best effort - no error checking as we are exiting anyway */
+    saveGame ();
+    GameOver = 1;
+    return;
+}
+
 
 void maybeSpawnMonsters ()
 {
@@ -76,6 +88,8 @@ gameLoop ()
 
     Level->computeVisibility ();
     I->drawScreen ();
+
+    signal(SIGHUP,hupHandler);
 
     while (!GameOver) {
         /* cleanup deleted objects (HACK) */

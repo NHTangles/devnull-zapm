@@ -1,0 +1,5 @@
+*.o
+zapm
+build
+zapm.tar.gz
+config.h
