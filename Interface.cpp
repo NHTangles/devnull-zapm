@@ -163,8 +163,8 @@ shInterface::shInterface ()
     initializeGlyphs ();
 
 #ifdef SH_DEBUG
-    char dbgfilename[40];
-    snprintf (dbgfilename, 40, "%s/dbg.%d.txt", DataDir, getuid ());
+    char dbgfilename[80];
+    snprintf (dbgfilename, 80, "%s/dbg.%d.txt", DataDir, getuid ());
     mDbgFile = fopen (dbgfilename, "w");
     if (!mDbgFile) {
         endwin ();

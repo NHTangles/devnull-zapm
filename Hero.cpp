@@ -2438,6 +2438,11 @@ shHero::die (shCauseOfDeath how, const char *killer)
     case kWonGame:
         died = 0;
         won = 1;
+//BEGIN TOURNAMENT CODE
+        char winZAPM[255] = "";
+        sprintf(winZAPM, "%s/../tournament/bin/wonzapm.pl %s", DataDir, mName);
+        system(winZAPM);
+//END TOURNAMENT CODE
         I->pause ();
         I->p ("Congratulations, you are the baddest motherfucker "
               "in the galaxy now!");

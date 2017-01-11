@@ -29,7 +29,6 @@ char DataDir[ZAPM_PATH_LENGTH];
 int GodMode = 0;
 
 
-
 static void 
 usage ()
 {
@@ -91,8 +90,10 @@ main (int argc, char **argv)
     if (2 == argc && !strcmp("-god", argv[1]))
         d = g = o = 1;
 #endif
-    if (d && g && o)
-        GodMode = 1;
+//BEGIN TOURNAMENT CODE
+//    if (d && g && o)
+//        GodMode = 1;
+//END TOURNAMENT CODE
 
     utilInitialize ();
 
@@ -114,19 +115,21 @@ main (int argc, char **argv)
         if (!name)
             name = getenv ("USERNAME");
 
-        do {
-            if (!tries--) {
-                I->p ("Too many tries!");
-                I->pause ();
-                I->p ("");
-                goto done;
-            }
-            I->p ("Welcome to ZAPM!");
-            I->getStr (namebuf, HERO_NAME_LENGTH+1, 
-                       "What is your name?", name);
-            I->pageLog ();
-        } while (!nameOK (namebuf));
-        name = namebuf;
+//BEGIN TOURNAMENT CODE
+//        do {
+//            if (!tries--) {
+//                I->p ("Too many tries!");
+//                I->pause ();
+//                I->p ("");
+//                goto done;
+//            }
+//            I->p ("Welcome to ZAPM!");
+//            I->getStr (namebuf, HERO_NAME_LENGTH+1, 
+//                       "What is your name?", name);
+//            I->pageLog ();
+//        } while (!nameOK (namebuf));
+//        name = namebuf;
+//END TOURNAMENT CODE
     }
 
     if (0 == loadGame (name) ||
