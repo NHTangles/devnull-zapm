@@ -11,8 +11,8 @@ Skills.o Tombstone.o Tool.o Town.o TwistyRooms.o Util.o Vat.o Vision.o	\
 Weapon.o main.o
 
 ZAPMOWNER= nethack
-GAMEDIR= "/devnull/nethackdir"
-DATADIR= "/devnull/nethackdir/zapmdir"
+GAMEDIR= "/opt/devnull/nethackdir"
+DATADIR= "/opt/devnull/nethackdir/zapmdir"
 
 #ARCH = -arch i386 -arch ppc
 
@@ -62,10 +62,10 @@ zapm-win32: win32/Release/zapm.exe
 	cd win32/build && zip -r ../zapm.zip zapm 
 
 zapm: $(OBJS)
-	c++ -g -o zapm $(LDPATH) $(LDFLAGS) $(LIBS) $(OBJS)
+	c++ -g -o zapm $(LDPATH) $(LDFLAGS) $(OBJS) $(LIBS)
 
 debug: $(OBJS)
-	c++ -g -o zapm $(LDPATH) $(LDFLAGS) $(LIBS) $(OBJS) $(DEBUGLIBS)
+	c++ -g -o zapm $(LDPATH) $(LDFLAGS) $(OBJS) $(LIBS) $(DEBUGLIBS)
 
 clean:
 	rm -f zapm *.o config.h dbg.txt gmon.out
