@@ -73,7 +73,6 @@ clean:
 cleaner: clean
 	rm -f *~ \#*\#
 
-#$(OBJS) : config.h
 Monster.o : MonsterData.h
 
 multiuser :

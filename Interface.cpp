@@ -103,13 +103,6 @@ shInterface::shInterface ()
     ColorMap[kDarkCyan] = COLOR_PAIR (6) | A_DIM;
     ColorMap[kDarkGray] = COLOR_PAIR (7) | A_DIM;
 
-    
-
-
-
-
-
-
 #endif
 
     mColor = kGray;
@@ -129,7 +122,7 @@ shInterface::shInterface ()
     mMainWin = newwin (20, mXMax, 0, 0);
     if (!mMainWin) goto toosmall;
     new_panel (mMainWin);
-    notimeout (mMainWin, TRUE);
+    //notimeout (mMainWin, TRUE);
     mSideWin = newwin (20, 80 - mXMax, 0, mXMax);
     if (!mSideWin) goto toosmall;
     new_panel (mSideWin);
