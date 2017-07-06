@@ -133,7 +133,7 @@ shInterface::shInterface ()
         mDiagWin = newwin (10, 80, 25, 0);
         scrollok (mDiagWin, TRUE);
     }
-    notimeout (mLogWin, TRUE);
+    //notimeout (mLogWin, TRUE);
     mLogSize = 5;
     mLogRow = 0;
     mHistoryIdx = 0;
