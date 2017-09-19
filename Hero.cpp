@@ -2438,11 +2438,20 @@ shHero::die (shCauseOfDeath how, const char *killer)
     case kWonGame:
         died = 0;
         won = 1;
-//BEGIN TOURNAMENT CODE
-        char winZAPM[255] = "";
-        sprintf(winZAPM, "%s/../tournament/bin/wonzapm.pl %s", DataDir, mName);
-        system(winZAPM);
-//END TOURNAMENT CODE
+#ifdef CHALLENGE
+        FILE *ZAPM_flag;
+        char ZAPM_success[255] = "";
+        sprintf(ZAPM_success, "%s/ZAPM-%s-success", CHALLENGE, mName);
+        ZAPM_flag = fopen(ZAPM_success, "w");
+        if (NULL != ZAPM_flag) {
+            fclose(ZAPM_flag);
+        } else {
+            I->pause ();
+            I->p ("Sorry, we were unable to log your completion of the challenge.");
+            I->pause ();
+            I->p ("Please contact a tournament administrator.");
+        }
+#endif
         I->pause ();
         I->p ("Congratulations, you are the baddest motherfucker "
               "in the galaxy now!");

@@ -131,6 +131,34 @@ main (int argc, char **argv)
 //        name = namebuf;
 //END TOURNAMENT CODE
     }
+#ifdef CHALLENGE
+#define TESTMODE
+    char ZAPM_fn[255];
+    FILE *ZAPM_flag;
+    sprintf(ZAPM_fn, "%s/ZAPM-%s-accept", CHALLENGE, name);
+    ZAPM_flag = fopen(ZAPM_fn, "r");
+    if (NULL != ZAPM_flag) {
+        fclose(ZAPM_flag);
+    } else {
+        I->p ("Somehow, you cannot find it within yourself to seek the Bizarro Orgasmatron.");
+#ifdef TESTMODE
+        I->p ("But you shrug, and carry on anyway.");
+        I->pause();
+#else
+        I->p ("So you decide to pursue inspiration elsewhere.");
+        I->pause();
+        exitZapm(1);
+#endif //TESTMODE
+    }
+    sprintf(ZAPM_fn, "%s/ZAPM-%s-success", CHALLENGE, name);
+    ZAPM_flag = fopen(ZAPM_fn, "r");
+    if (NULL != ZAPM_flag) {
+        fclose(ZAPM_flag);
+        I->p("Despite already possessing the Bizarro Orgasmatron, you find yourself inexplicably drawn back to this place.");
+        I->p("Maybe you should see someone about that.");
+    }
+
+#endif //CHALLENGE
 
     if (0 == loadGame (name) ||
         0 == newGame (name)) 
