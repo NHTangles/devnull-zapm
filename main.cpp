@@ -145,7 +145,7 @@ main (int argc, char **argv)
         I->p ("But you shrug, and carry on anyway.");
         I->pause();
 #else
-        I->p ("So you decide to pursue inspiration elsewhere.");
+        I->p ("You feel a need to return to the Dungeons of Doom to discover what you truly wish for.");
         I->pause();
         exitZapm(1);
 #endif //TESTMODE
