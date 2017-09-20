@@ -18,7 +18,7 @@ third number:  incremented with bug fix releases that don't affect gameplay
 
 #define ZAPM_VERSION "0.8.3"
 
-#define SH_DEBUG
+//#define SH_DEBUG
 
 #ifdef DJGPP
 #include <stdarg.h>

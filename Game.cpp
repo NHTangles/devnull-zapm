@@ -19,8 +19,8 @@ void hupHandler ()
     /* Attempt to save and exit on SIGHUP */
     /* Best effort - no error checking as we are exiting anyway */
     saveGame ();
-    GameOver = 1;
-    return;
+    exitZapm(0);
+    
 }
 
 
