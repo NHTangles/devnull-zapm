@@ -132,7 +132,7 @@ main (int argc, char **argv)
 //END TOURNAMENT CODE
     }
 #ifdef CHALLENGE
-#define TESTMODE
+//#define TESTMODE
     char ZAPM_fn[255];
     FILE *ZAPM_flag;
     sprintf(ZAPM_fn, "%s/ZAPM-%s-accept", CHALLENGE, name);
@@ -145,7 +145,8 @@ main (int argc, char **argv)
         I->p ("But you shrug, and carry on anyway.");
         I->pause();
 #else
-        I->p ("You feel a need to return to the Dungeons of Doom to discover what you truly wish for.");
+        I->p ("You feel a need to return to the Dungeons of Doom");
+	I->p ("to discover what you truly wish for.");
         I->pause();
         exitZapm(1);
 #endif //TESTMODE
@@ -154,8 +155,8 @@ main (int argc, char **argv)
     ZAPM_flag = fopen(ZAPM_fn, "r");
     if (NULL != ZAPM_flag) {
         fclose(ZAPM_flag);
-        I->p("Despite already possessing the Bizarro Orgasmatron, you find yourself inexplicably drawn back to this place.");
-        I->p("Maybe you should see someone about that.");
+        I->p("Despite already possessing the Bizarro Orgasmatron, you find yourself");
+	I->p("inexplicably drawn back to this place. Maybe you should see someone about that.");
     }
 
 #endif //CHALLENGE

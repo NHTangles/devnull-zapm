@@ -10,7 +10,7 @@ RayGun.o Render.o Room.o SaveLoad.o Sewer.o SewerPlant.o Shop.o		\
 Skills.o Tombstone.o Tool.o Town.o TwistyRooms.o Util.o Vat.o Vision.o	\
 Weapon.o main.o
 
-ZAPMOWNER= nethack:nethack
+ZAPMOWNER= games:games
 CHROOT= /opt/nethack/hardfought.org
 GAMEDIR= $(CHROOT)/zapm
 #GAMEDIR= "/opt/devnull/nethackdir"
