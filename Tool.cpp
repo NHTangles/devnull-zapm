@@ -262,6 +262,7 @@ shHero::useKey (shObject *key, shFeature *door)
         }
     } else if (door->isRetinaDoor ()) {
         I->p ("You need the proper retina to unlock this door.");
+	return QUICKTURN;
     } else {
         if (isBlind ())
             I->p ("Nothing happens.");

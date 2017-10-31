@@ -201,6 +201,7 @@ loadRayGun (shObject *gun)
         gun->mIlk = findAnIlk (&RayGunIlks, "gauss ray gun");
     } else if (can->isA ("canister of mutagen")) {
         gun->mIlk = findAnIlk (&RayGunIlks, "gamma ray gun");
+	gun->mFlags |= shObject::kRadioactive;
     } else if (can->isA ("canister of spice")) {
         gun->mIlk = findAnIlk (&RayGunIlks, "transporter ray gun");
     } else if (can->isA ("canister of super glue")) {

@@ -287,7 +287,7 @@ aquamarine_marine   @   BrightCyan    Humanoid   4  1d5 Medium  7  9   16  16  1
 +                                                                                                                               | assault pistol
 +                                                                                                                               , 2d10 bullets
 +                                                                                                                               , chainsaw
-+                                                                                                                                 aquamarine power armor
++                                                                                                                                 suit of aquamarine power armor
 +                                                                                                                                 40% 4d10 energy cells
 monolith            M   Black         Construct  0  1   Large   10 9   12  20  1   8   18  18  18  100   0    0  0  SitStill  100 Smash     Concussive  5d8  1  1000
 & Sessile
@@ -322,7 +322,7 @@ mean_green_marine   @   BrightGreen   Humanoid   4  2d3 Medium  9  11  18  16  1
 +                                                                                                                               | assault pistol
 +                                                                                                                               , 2d10 bullets
 +                                                                                                                               , chainsaw
-+                                                                                                                                 mean green power armor
++                                                                                                                                 suit of mean green power armor
 +                                                                                                                                 40% 4d10 energy cells
 +                                                                                                                                 40% canister of healing
 +                                                                                                                                 40% canister of restoration

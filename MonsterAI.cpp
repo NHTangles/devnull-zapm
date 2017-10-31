@@ -692,9 +692,6 @@ shMonster::doWander ()
                 } else {
                     elapsed = shootWeapon (mWeapon, dir);
                 }
-                if (-2 == elapsed) {
-                    die (kSuicide);
-                }
                 return elapsed;
             }
 

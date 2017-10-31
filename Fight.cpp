@@ -665,6 +665,7 @@ shCreature::shootWeapon (shObject *weapon, shDirection dir)
         if (isHero ()) {
             if (weapon->isA (kRayGun)) {
                 weapon->mIlk = findAnIlk (&RayGunIlks, "empty ray gun");
+		weapon->mFlags &= ~shObject::kRadioactive;
                 weapon->setChargeKnown ();
                 weapon->setIlkKnown ();
                 weapon->setAppearanceKnown ();
@@ -872,6 +873,7 @@ shCreature::shootWeapon (shObject *weapon, shDirection dir)
 
     if (setemptyraygun) {
         weapon->mIlk = findAnIlk (&RayGunIlks, "empty ray gun");
+	weapon->mFlags &= ~shObject::kRadioactive;
     }
         
     return attack->mAttackTime;
