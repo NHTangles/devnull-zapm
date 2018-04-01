@@ -1242,7 +1242,7 @@ shCreature::die (shCauseOfDeath how, const char *killer)
 
 
     if (isExplosive () && kSlain == how) {
-        shAttack *atk = mIlk->mAttacks.get (0);
+      shAttack *atk = mIlk->mAttacks.count() ?  mIlk->mAttacks.get (0) : NULL;
         if (atk && shAttack::kSpawnPrograms == atk->mType) {
             Level->spawnPrograms (mX, mY, 8);
         } else {

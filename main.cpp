@@ -132,7 +132,7 @@ main (int argc, char **argv)
 //END TOURNAMENT CODE
     }
 #ifdef CHALLENGE
-//#define TESTMODE
+#define TESTMODE
     char ZAPM_fn[255];
     FILE *ZAPM_flag;
     sprintf(ZAPM_fn, "%s/ZAPM-%s-accept", CHALLENGE, name);
