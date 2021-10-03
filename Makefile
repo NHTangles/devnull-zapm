@@ -11,7 +11,7 @@ Skills.o Tombstone.o Tool.o Town.o TwistyRooms.o Util.o Vat.o Vision.o	\
 Weapon.o main.o
 
 ZAPMOWNER= games:games
-CHROOT= /opt/nethack/hardfought.org
+CHROOT= /opt/nethack/chroot
 GAMEDIR= $(CHROOT)/zapm
 #GAMEDIR= "/opt/devnull/nethackdir"
 #DATADIR= "/opt/devnull/nethackdir/zapmdir"
@@ -25,11 +25,11 @@ LIBS= -lpanel -lcurses
 INCLUDE=
 #LDFLAGS= -flat_namespace $(ARCH)
 LDFLAGS=
-CXX = c++
+CXX = g++
 #CXX= c++-4.0
 
 
-CXXFLAGS=-Wall -fpermissive -Wno-char-subscripts -O -g $(INCLUDE) $(ARCH)
+CXXFLAGS=-Wall -fpermissive -Wno-char-subscripts -O0 -g3 $(INCLUDE) $(ARCH)
 
 all: zapm-tournament
 
@@ -69,13 +69,13 @@ zapm-win32: win32/Release/zapm.exe
 	cp win32/Release/zapm.exe win32/build/zapm/
 	cp docs/Guide.txt win32/build/zapm
 	rm -f zapm.zip
-	cd win32/build && zip -r ../zapm.zip zapm 
+	cd win32/build && zip -r ../zapm.zip zapm
 
 zapm: $(OBJS)
-	c++ -g -o zapm $(LDPATH) $(LDFLAGS) $(OBJS) $(LIBS)
+	g++ -g -o zapm $(LDPATH) $(LDFLAGS) $(OBJS) $(LIBS)
 
 debug: $(OBJS)
-	c++ -g -o zapm $(LDPATH) $(LDFLAGS) $(OBJS) $(LIBS) $(DEBUGLIBS)
+	g++ -g -o zapm $(LDPATH) $(LDFLAGS) $(OBJS) $(LIBS) $(DEBUGLIBS)
 
 clean:
 	rm -f zapm *.o config.h dbg.txt gmon.out
