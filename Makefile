@@ -23,13 +23,13 @@ INPR=/dgldir/inprogress-zapm
 
 LIBS= -lpanel -lcurses
 INCLUDE=
-#LDFLAGS= -flat_namespace $(ARCH)
+#LDFLAGS= $(ARCH)
 LDFLAGS=
 CXX = g++
 #CXX= c++-4.0
 
 
-CXXFLAGS=-Wall -fpermissive -Wno-char-subscripts -O0 -g3 $(INCLUDE) $(ARCH)
+CXXFLAGS=-Wall -Wextra -fpermissive -Wno-char-subscripts -O0 -g3 $(INCLUDE) $(ARCH)
 
 all: zapm-tournament
 
