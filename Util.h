@@ -20,7 +20,7 @@ int maxi (int x, int y);
 
 #define SHBUFLEN 256
 
-char *GetBuf ();    
+char *GetBuf ();
 //char (*GetBuff ())[SHBUFLEN];
 
 #define YOUR(_X) ((_X)->your())
@@ -37,7 +37,7 @@ template <class T>
 class shVector
 {
  public:
-  
+
     shVector (int capacity = 4, int destroyItems = 0);
     ~shVector ();
 
@@ -61,7 +61,7 @@ class shVector
     int mCount;
     int mCapacity;
     int mDestroyItems;
-  
+
 };
 
 
@@ -97,7 +97,7 @@ shVector<T>::~shVector ()
         for (i = 0; i < mCount; i++) {
           //delete mItems[i];
         }
-    }   
+    }
     free (mItems);
 }
 
@@ -107,7 +107,7 @@ void
 shVector<T>::ensure (int capacity)
 {
     if (mCapacity < capacity) {
-        grow (capacity);
+        this->grow (capacity);
     }
 }
 
@@ -144,7 +144,7 @@ int
 shVector<T>::add (T item)
 {
     if (++mCount == mCapacity) {
-        grow (mCapacity * 2);
+        this->grow (mCapacity * 2);
     }
     mItems[mCount-1] = item;
     return mCount - 1;
@@ -262,10 +262,10 @@ shHeap<T>::insert (T item)
     int i;
 
     if (++this->mCount == this->mCapacity) {
-        grow (this->mCapacity * 2);
+        this->grow (this->mCapacity * 2);
     }
     i = this->mCount - 1;
-    while (i > 0 && 
+    while (i > 0 &&
            mCompareFunc (item, this->mItems[(i-1)/2]) < 0)
     {
         this->mItems[i] = this->mItems[(i-1)/2];
