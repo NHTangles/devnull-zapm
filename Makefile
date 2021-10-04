@@ -29,7 +29,7 @@ CXX = g++
 #CXX= c++-4.0
 
 
-CXXFLAGS=-Wall -Wextra -fpermissive -Wno-char-subscripts -O0 -g3 $(INCLUDE) $(ARCH)
+CXXFLAGS=-Wall -Wextra -fpermissive -Wno-char-subscripts -O0 -g3 -std=c++98 $(INCLUDE) $(ARCH)
 
 all: zapm-tournament
 
